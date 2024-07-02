@@ -36,21 +36,39 @@
             </div>
             <div class="section">
                 <label class="label">친구아이디/이메일 추가</label>
-                <input type="text" class="input-box" placeholder="친구아이디/이메일">
+                <input type="text" class="input-box">
                 <button type="button" class="add-button">추가하기</button>
             </div>
             <div class="section">
                 <label class="label">초대된 친구</label>
                 <span class="invited-friends" onclick="toggleInvitedList()">나영, 정현 외 3명 ></span>
                 <div class="invited-list" id="invited-list">
-                    <p>나영</p>
-                    <p>정현</p>
-                    <p>친구1</p>
-                    <p>친구2</p>
-                    <p>친구3</p>
+                    <p><span class="highlight">< 5명의 친구와 회고를 나누고 있어요</span></p>
+                    <hr>
+                    <div class="friend">
+                        <span>나영</span>
+                        <button type="button" class="remove-button">공유 그만하기</button>
+                    </div>
+                    <div class="friend">
+                        <span>정현</span>
+                        <button type="button" class="remove-button">공유 그만하기</button>
+                    </div>
+                    <div class="friend">
+                        <span>친구1</span>
+                        <button type="button" class="remove-button">공유 그만하기</button>
+                    </div>
+                    <div class="friend">
+                        <span>친구2</span>
+                        <button type="button" class="remove-button">공유 그만하기</button>
+                    </div>
+                    <div class="friend">
+                        <span>친구3</span>
+                        <button type="button" class="remove-button">공유 그만하기</button>
+                    </div>
                 </div>
             </div>
         </form>
+    
     
         <script src="/js/mypage_share.js"></script>
     </main>
