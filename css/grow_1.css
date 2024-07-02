@@ -194,19 +194,21 @@
   margin-top: 10px;
 }
 
-.QuestionMark-img {
+.add-container {
   display: flex;
-  width: 15px;
-  height: 15px;
+  width: 180px;
+  height: 30px;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
+  color: #bed8eb;
   text-align: center;
   font-family: Pretendard;
-  font-size: 14px;
+  font-size: 10px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 133.8%; /* 18.732px */
+  font-weight: 700;
+  margin-left: -160px;
+  margin-top: 10px;
 }
 
 .percent-container {
@@ -226,6 +228,7 @@
   font-weight: 200;
   line-height: 290%; /* 46.4px */
   margin-top: 50px;
+  margin-left: -180px;
 }
 
 .vertical {
@@ -267,7 +270,7 @@
   font-weight: 400;
   line-height: 133.8%; /* 21.408px */
   margin-top: 300px;
-  margin-left: -140px;
+  margin-left: -130px;
 }
 
 .date-container2 {
@@ -284,7 +287,7 @@
   font-weight: 400;
   line-height: 133.8%; /* 21.408px */
   margin-top: 300px;
-  margin-left: 130px;
+  margin-left: 110px;
 }
 
 .date-container3 {
@@ -301,7 +304,7 @@
   font-weight: 400;
   line-height: 133.8%; /* 21.408px */
   margin-top: 300px;
-  margin-left: 130px;
+  margin-left: 110px;
 }
 
 .date-container4 {
@@ -318,7 +321,7 @@
   font-weight: 400;
   line-height: 133.8%; /* 21.408px */
   margin-top: 300px;
-  margin-left: 130px;
+  margin-left: 110px;
 }
 
 .date-container5 {
@@ -335,7 +338,7 @@
   font-weight: 400;
   line-height: 133.8%; /* 21.408px */
   margin-top: 300px;
-  margin-left: 130px;
+  margin-left: 110px;
 }
 .project-container {
   width: 1200px;
