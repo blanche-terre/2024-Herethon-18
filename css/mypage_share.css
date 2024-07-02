@@ -11,10 +11,10 @@
     flex-direction: column;
     gap: 20px;
     width: 40em;
-    margin: 50px auto;
+    margin: 1rem auto;
     padding: 20px;
     background-color: #9FCBC9;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .form-text h2 {
