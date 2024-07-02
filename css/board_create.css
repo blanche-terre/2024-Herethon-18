@@ -1,5 +1,10 @@
+.back-btn-icon {
+    position: fixed;
+    top: 120px;
+    left: 30px;
+}
 #board-create-title {
-    margin: 60px 0 60px 20px;
+    margin: 50px 0 20px 0;
     font-size: 24px;
     font-weight: bold;
 }
@@ -26,7 +31,7 @@
 }
 #board-create-content {
     width: 1200px;
-    height: 667px;
+    height: 480px;
     background-color: #ffffff;
     position: relative;
     display: flex;
@@ -34,7 +39,7 @@
     margin: 30px 0;
 }
 #board-create-content-detail {
-    height: 667px;
+    height: 480px;
     width: 1020px;
     border: 0;
     padding: 20px;
@@ -46,7 +51,7 @@
 }
 #board-create-setting-box {
     width: 180px;
-    height: 667px;
+    height: 480px;
     background-color: var(--main--gray--color);
     border-radius: 10px 0 0 10px;
     position: absolute;

@@ -29,6 +29,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 68px;
+    padding-bottom: 30px;
 }
 .board-list-post {
     width: 350px;
@@ -43,6 +44,7 @@
 .board-list-img {
     width: 280px;
     height: 210px;
+    object-fit: contain; 
 }
 .board-list-title {
     font-size: 24px;
