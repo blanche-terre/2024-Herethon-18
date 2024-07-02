@@ -12,22 +12,86 @@
     <header id="header">
         <a href="" id="header-logo">ProReflect</a>
         <nav id="header-nav">
-           <a href="">공유용 게시판</a>
-           <a href="">회고용 게시판</a>
+           <a href="board_list.html">공유용 게시판</a>
            <a href="">프로젝트로그</a>
-           <a href="">마이페이지</a> 
+           <a href="">마이페이지</a>
         </nav>
     </header>
     <main>
-        <h1 id="board-create-title">Reflect 작성</h1>
+        <h1 id="board-create-title">Reflect 작성
+            <button class="back-icon-btn">
+                <img src="../img/back-button.svg" alt="뒤로가기 아이콘">
+            </button>
+        </h1>
         <div id="board-create-top">
             <input type="text" id="board-create-post-title" placeholder="제목을 입력해 주세요.">
             <button class="board-post-btn">Reflect 게시</button>
         </div>
         <div id="board-create-content">
-            <!-- <input type="text" id="board-create-content-detail"> -->
-            <div id="board-create-setting-box"></div>
+            <textarea name="" id="board-create-content-detail"placeholder="프로젝트의 목적, 개발 스택, 배포 링크, 깃허브 주소 등 &#13;&#10;개발했던 프로젝트와 관련된 이야기를 써주세요. &#13;&#10;&#13;&#10;같이 프로젝트에 참여한 사람을 @멘션 해보세요!"></textarea>
+            <div id="board-create-setting-box">
+
+                <!-- 개발 기간 드롭다운 -->
+                <div class="board-create-dropdown">
+                    <button class="board-create-dropdown-btn" onclick="toggleDropdown()">
+                        개발 기간
+                        <img src="../img/inverted-triangle.svg" alt="드롭다운 아이콘" class="board-create-dropdown-img">
+                    </button>
+                    <div class="board-create-dropdown-content">
+                        <a href="#" onclick="selectOption('0~3개월')">0~3개월</a>
+                        <a href="#" onclick="selectOption('4~7개월')">4~7개월</a>
+                        <a href="#" onclick="selectOption('8~11개월')">8~11개월</a>
+                        <a href="#" onclick="selectOption('12개월 이상')">12개월 이상</a>
+                    </div>                    
+                </div>
+
+                <!-- 참여 인원 드롭다운 -->
+                <div class="board-create-dropdown2">
+                    <button class="board-create-dropdown-btn2" onclick="toggleDropdown2()">
+                        참여 인원
+                        <img src="../img/inverted-triangle.svg" alt="드롭다운 아이콘" class="board-create-dropdown-img">
+                    </button>
+                    <div class="board-create-dropdown-content2">
+                        <a href="#" onclick="selectOption2('1~6명')">1~6명</a>
+                        <a href="#" onclick="selectOption2('7~12명')">7~12명</a>
+                        <a href="#" onclick="selectOption2('13~18명')">13~18명</a>
+                        <a href="#" onclick="selectOption2('19명 이상')">19명 이상</a>
+                    </div>                    
+                </div>
+
+                <!-- 사용 언어 드롭다운 -->
+                <div class="board-create-dropdown">
+                    <button class="board-create-dropdown-btn3" onclick="toggleDropdown3()">
+                        사용 언어
+                        <img src="../img/inverted-triangle.svg" alt="드롭다운 아이콘" class="board-create-dropdown-img">
+                    </button>
+                    <div class="board-create-dropdown-content3">
+                        <a href="#" onclick="selectLanguage('Python')">Python</a>
+                        <a href="#" onclick="selectLanguage('NumPy')">NumPy</a>
+                        <a href="#" onclick="selectLanguage('Pandas')">Pandas</a>
+                        <a href="#" onclick="selectLanguage('Java')">Java</a>
+                        <a href="#" onclick="selectLanguage('JavaScript')">JavaScript</a>
+                        <a href="#" onclick="selectLanguage('Django')">Django</a>
+                        <a href="#" onclick="selectLanguage('HTML')">HTML</a>
+                        <a href="#" onclick="selectLanguage('CSS')">CSS</a>
+                        <a href="#" onclick="selectLanguage('C++')">C++</a>
+                        <a href="#" onclick="selectLanguage('직접 입력')">직접 입력</a> <!-- 직접 입력받는 형식으로 수정 -->
+                    </div>                    
+                </div>
+                
+                <!-- 사용 언어 추가될 부분 -->
+                <div id="board-create-selected-languages"></div>
+
+                 <!-- 파일 첨부 -->
+                <div id="board-file-display"></div>
+                <div class="board-create-img" onclick="boardFileInput()">
+                    파일 첨부
+                    <img src="../img/paperclip.svg" alt="파일 첨부 아이콘">
+                </div>
+                <input type="file" id="board-file-input">
+            </div>
         </div>
     </main>
+    <script src="../js/board_create.js"></script>
 </body>
 </html>
