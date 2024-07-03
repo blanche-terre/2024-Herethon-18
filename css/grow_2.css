@@ -1,0 +1,349 @@
+.back-btn-icon {
+  position: fixed;
+  top: 120px;
+  left: 30px;
+}
+
+.Big-container {
+  display: flex;
+  flex-direction: row;
+  width: 1512px;
+  height: 982px;
+  background: #f2f3f7;
+  margin-left: 156px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 490px;
+  height: 1039px;
+  flex-shrink: 0;
+}
+
+.title-container {
+  display: flex;
+  width: 486.343px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Pretendard;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.8%; /* 48.168px */
+}
+
+.Username-container {
+  display: flex;
+  width: 127.985px;
+  height: 15px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #5b5b5b;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.8%; /* 18.732px */
+}
+
+.otherusers-container {
+  display: flex;
+  flex-direction: row;
+  width: 486.343px;
+  height: 17px;
+}
+.otheruser-container {
+  display: flex;
+  width: 97.512px;
+  height: 15px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #5b5b5b;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.8%; /* 18.732px */
+}
+
+.longname-container {
+  display: flex;
+  width: 205px;
+  height: 15px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: #5b5b5b;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.8%; /* 18.732px */
+  margin-left: 18.28px;
+}
+
+.otheruser1-container {
+  display: flex;
+  width: 104.826px;
+  height: 15px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #5b5b5b;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.8%; /* 18.732px */
+  margin-left: 18.28px;
+}
+
+.otheruser2-container {
+  display: flex;
+  width: 30.473px;
+  height: 15px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: #5b5b5b;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.8%; /* 18.732px */
+  margin-left: 18.28px;
+}
+.black1-container {
+  display: flex;
+  flex-direction: row;
+  width: 486.343px;
+  height: 26px;
+  margin-top: 20px;
+}
+
+.period-container {
+  display: flex;
+  width: 121.89px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #000;
+  border-radius: 6px;
+  color: #ffffff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.8%; /* 21.408px */
+}
+
+.people-container {
+  display: flex;
+  width: 121.89px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #000;
+  border-radius: 6px;
+  flex-shrink: 0;
+  color: #ffffff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.8%; /* 21.408px */
+  margin-left: 12.19px;
+}
+
+.black2-container {
+  display: flex;
+  flex-direction: row;
+  width: 486.343px;
+  height: 26px;
+  margin-top: 5px;
+}
+.html-container {
+  display: flex;
+  width: 121.89px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #000;
+  border-radius: 6px;
+  color: #ffffff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.8%; /* 21.408px */
+}
+
+.css-container {
+  display: flex;
+  width: 121.89px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #000;
+  border-radius: 6px;
+  color: #ffffff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.8%; /* 21.408px */
+  margin-left: 12.19px;
+}
+
+.Django-container {
+  display: flex;
+  width: 121.89px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #000;
+  border-radius: 6px;
+  color: #ffffff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.8%; /* 21.408px */
+  margin-left: 12.19px;
+}
+
+.img-container {
+  width: 488px;
+  height: 366px;
+  flex-shrink: 0;
+  border: 1px solid #000;
+  margin-top: 24px;
+}
+
+.explain-container {
+  width: 488px;
+  height: 399px;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  margin-top: 10px;
+}
+.proreflect-container {
+  display: flex;
+  width: 490px;
+  height: 1039px;
+  flex-shrink: 0;
+  margin-left: 80px;
+  margin-top: 27px;
+}
+
+.proTitle-container {
+  display: flex;
+  width: 490px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.8%; /* 48.168px */
+}
+
+.proreflect {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  background-color: #048271;
+  border-radius: 8px;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 133.8%; /* 18.732px */
+  margin-top: 70px;
+  margin-left: -200px;
+}
+
+.text-container {
+  display: flex;
+  width: 180px;
+  height: 50px;
+  margin-top: 7px;
+  margin-left: 15px;
+}
+
+.reflect-container {
+  display: flex;
+  flex-direction: column;
+  width: 490px;
+  height: 915.999px;
+  flex-shrink: 0;
+  background: #f5f6f8;
+  margin-top: 157.75px;
+  margin-left: -420px;
+}
+
+.reflecttext-container {
+  width: 467.209px;
+  height: 894.496px;
+  flex-shrink: 0;
+
+  color: #5b5b5b;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+
+#edit-delete-buttons {
+  display: flex;
+  height: 30px;
+  margin-right: 10em;
+}
+
+.edit-button,
+.delete-button {
+  width: 120px; /* 버튼 너비 설정 */
+  height: 30px; /* 버튼 높이 설정 */
+  font-size: 15px;
+}

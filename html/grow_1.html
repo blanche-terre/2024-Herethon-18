@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/grow_1.css" />
+    <title>ProReflect</title>
+  </head>
+  <body>
+    <header id="header">
+      <a href="" id="header-logo">ProReflect</a>
+      <nav id="header-nav">
+        <a href="">공유용 게시판</a>
+        <a href="">성장 관찰 </a>
+        <a href="">마이페이지</a>
+      </nav>
+    </header>
+    <main>
+      <div class="Big-container">
+        <div class="post-container">
+          <h1 class="text1-container">총 포스트</h1>
+          <h1 class="score-container">14</h1>
+          <h1 class="unit-container">개</h1>
+          <h1 class="text2-container">를 올렸어요!</h1>
+        </div>
+
+        <div class="user-container">
+          <h1 class="text3-container">사용자</h1>
+          <h1 class="score2-container">21</h1>
+          <h1 class="unit2-container">명</h1>
+          <h1 class="text4-container">이 좋아했어요!</h1>
+        </div>
+      </div>
+      <div class="graph-container">
+        <h1 class="history-container">
+          성장 History
+          <h1 class="add-container">
+            <br /><br /><br /><br /><br /><br /><br /><br />성장률=좋아요
+            수/해당 게시물 조회수
+          </h1>
+          <img
+            src="../img/QuestionMark.svg"
+            alt="성장 History"
+            class="QuestionMark-img"
+          />
+          <!-- 이미지 해결 안됨 -->
+        </h1>
+        <div class="percent-container">
+          90%<br />70%<br />50%<br />30%<br />10%<br />0%
+        </div>
+        <div class="vertical"></div>
+        <div class="horizon"></div>
+        <div class="Bigdate-container">
+          <div class="date-container1">YY.MM.DD</div>
+          <div class="date-container2">YY.MM.DD</div>
+          <div class="date-container3">YY.MM.DD</div>
+          <div class="date-container4">YY.MM.DD</div>
+          <div class="date-container5">YY.MM.DD</div>
+        </div>
+      </div>
+      <!-- 그래프 박스 -->
+      <div class="project-container">
+        <h1 class="text5-container">지금까지의 프로젝트</h1>
+        <div class="content-container">
+          <h1 class="title-container">Title</h1>
+          <h1 class="explain-container">내용</h1>
+          <div class="detail-container">
+            <h1 class="goodtext-container">좋아요</h1>
+            <h1 class="goodscore-container">8</h1>
+            <h1 class="comment-container">댓글</h1>
+            <h1 class="commentscore-container">3</h1>
+            <br />
+            <h1 class="date-container"><br /><br />YYYY.MM.DD</h1>
+            <button
+              type="button"
+              class="Retrospective"
+              onclick="location.href='grow_2.html'"
+            >
+              <h1 class="text-container">회고하러 가기</h1>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
