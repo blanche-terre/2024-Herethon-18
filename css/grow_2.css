@@ -6,11 +6,15 @@
 
 .Big-container {
   display: flex;
-  flex-direction: row;
-  width: 1512px;
+  /* width: 1512px; */
+  width: 1200px;
   height: 982px;
   background: #f2f3f7;
-  margin-left: 156px;
+  /* margin-left: 156px; */
+  margin: 80px 0 0 156px;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 20px;
 }
 
 .content-container {
@@ -26,7 +30,7 @@
   width: 486.343px;
   height: 40px;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   flex-shrink: 0;
   overflow: hidden;
   color: #000;
@@ -37,6 +41,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 133.8%; /* 48.168px */
+  margin-top: 27px;
 }
 
 .Username-container {
@@ -264,29 +269,31 @@
   width: 490px;
   height: 1039px;
   flex-shrink: 0;
-  margin-left: 80px;
-  margin-top: 27px;
+  /* margin-left: 80px;
+  margin-top: 27px; */
+  flex-direction: column;
 }
 
 .proTitle-container {
   display: flex;
   width: 490px;
-  height: 32px;
+  /* height: 32px; */
   flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
+  /* justify-content: center; */
+  /* flex-shrink: 0; */
   color: #000;
   font-family: Pretendard;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
   line-height: 133.8%; /* 48.168px */
+  margin-top: 27px;
 }
 
 .proreflect {
   display: flex;
-  width: 150px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
@@ -299,16 +306,15 @@
   font-style: normal;
   font-weight: 600;
   line-height: 133.8%; /* 18.732px */
-  margin-top: 70px;
-  margin-left: -200px;
+  /* margin-top: 70px;
+  margin-left: -200px; */
+  margin: 15px 0 15px auto;
 }
 
 .text-container {
-  display: flex;
-  width: 180px;
-  height: 50px;
-  margin-top: 7px;
-  margin-left: 15px;
+  line-height: 50px;
+  margin: 0 auto;
+  font-size: 20.94px;
 }
 
 .reflect-container {
@@ -318,15 +324,14 @@
   height: 915.999px;
   flex-shrink: 0;
   background: #f5f6f8;
-  margin-top: 157.75px;
-  margin-left: -420px;
+  /* margin-top: 157.75px;
+  margin-left: -420px; */
 }
 
 .reflecttext-container {
   width: 467.209px;
   height: 894.496px;
   flex-shrink: 0;
-
   color: #5b5b5b;
   font-family: Pretendard;
   font-size: 14px;
@@ -336,11 +341,22 @@
 }
 
 .edit-delete-buttons {
-  display: flex;
-  margin-top: 4em;
+  /* display: flex; */
+  /* margin-top: 4em; */
 }
 
 .edit-delete-buttons button {
   white-space: nowrap;
-  margin-left: 10em;
+}
+
+.edit-delete-buttons > div {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.edit-delete-buttons > div > button {
+  text-decoration: underline;
+  font-size: 14px;
 }
