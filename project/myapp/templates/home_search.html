@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home_search.css' %}?v=20240703">
+    <title>home_search</title>
+</head>
+<body>
+<header id="header">
+    <a href="{% url 'main' %}" id="header-logo">ProReflect</a>
+    <nav id="header-nav">
+        <a href="{% url 'board_list' %}">공유용 게시판</a>
+        <a href="{% if user.is_authenticated %}{% url 'grow_1' %}{% else %}{% url 'login' %}{% endif %}">성장관찰</a>
+        <a href="{% if user.is_authenticated %}{% url 'mypage_setting' %}{% else %}{% url 'login' %}{% endif %}">마이페이지</a>
+    </nav>
+</header>
+<main>
+    {% if results.exists %}
+        <!-- 검색 결과 있을 경우 -->
+        <div class="sort-options">
+            <label id="label-relevance">
+                <input type="radio" name="sort" id="relevance" checked>
+                • 관련도순
+            </label>
+            <label id="label-latest">
+                <input type="radio" name="sort" id="latest">
+                • 최신순
+            </label>
+        </div>
+        <div class="project-container" id="project-container-relevance">
+            {% for result in results %}
+            <div class="project-box">
+                <div class="project-image">
+                    <img src="{% if result.file %}{{ result.file.url }}{% else %}{% static 'img/default_project_image.png' %}{% endif %}" alt="프로젝트 이미지">
+                </div>
+                <div class="project-info">
+                    <div class="project-title">{{ result.title }}</div>
+                    <div class="project-content">{{ result.content }}</div>
+                </div>
+            </div>            
+            {% endfor %}
+        </div>
+    {% else %}
+        <!-- 검색 결과 없을 경우 -->
+        <div class="search-none">
+            검색어에 관한 결과가 없어요.<br><br>다른 검색어를 입력해주세요.
+        </div>
+    {% endif %}
+</main>
+<!-- {% load static %}
+    <script src="{% static 'js/home_search.js' %}"></script> -->
+</body>
+</html>
