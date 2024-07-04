@@ -47,20 +47,27 @@
           <div class="explain-container">내용 설명</div>
         </div>
 
-        <div class="proreflect-container">
+        
+        <div class="proreflect-container" id="proreflect-container">
           <h1 class="proTitle-container">ProReflect 작성</h1>
           <button
             type="button"
             class="proreflect"
-            onclick="location.href='grow_3.html'"
+            onclick="publishProReflect()"
           >
             <h1 class="text-container">ProReflect 게시</h1>
           </button>
+          <div class="edit-delete-buttons" style="display: none;">
+            <button type="button" onclick="editProReflect()">수정하기</button>
+            <button type="button" onclick="deleteProReflect()">삭제하기</button>
+            <div id="publish-date" style="text-align: right; white-space: nowrap;"></div>
+          </div>          
           <div class="reflect-container">
             <h1 class="reflecttext-container">내용</h1>
           </div>
         </div>
       </div>
     </main>
+    <script src="/js/grow_2.js"></script>
   </body>
 </html>

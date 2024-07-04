@@ -1,0 +1,60 @@
+.logo-text {
+    margin: 3em 0 1em 0;
+    text-align: center;
+    font-weight: bold;
+    color: #048271;
+    font-size: 2.5em;
+}
+
+.signup-form {
+    text-align: center;
+    background-color: white;
+    padding: 1em 5em;
+    border-radius: 12px;
+    width: 40em;
+    margin: 0 auto;
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1em 0;
+}
+
+.input-section h1 {
+    margin: 0;
+    font-size: 1.1em;
+    white-space: nowrap;
+    flex: 0 0 6em;
+    text-align: left; 
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+    margin: 0.5em 0;
+    padding: 1em;
+    border: 1px solid #9FCBC9;
+    border-radius: 5px;
+    width: calc(100%);
+    font-size: 14px;
+
+}
+
+.signup button {
+    color: #048271;
+    border: 2px solid #048271;
+    border-radius: 5px;
+    padding: 0.7em;
+    width: 14.8rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.signup button:hover {
+    background-color: #048271;
+    color: white;
+}
+
