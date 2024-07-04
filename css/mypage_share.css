@@ -15,6 +15,8 @@
     padding: 20px;
     background-color: #9FCBC9;
     border-radius: 12px;
+    width: 792px;
+    height: 430px;
 }
 
 .form-text h2 {
@@ -107,4 +109,9 @@
     background-color: #9FCBC9;
     color: #fff;
     cursor: pointer;
+}
+.back-icon-btn {
+    position: absolute;
+    left: 65px;
+    top: 120px;
 }
