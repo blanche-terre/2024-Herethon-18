@@ -31,13 +31,28 @@
             </div>
             <div class="setting-container">
                 <p class="setting-box-ment">비밀번호 변경</p>
-                <input type="text" class="setting-box-password" placeholder="새 비밀번호를 입력해주세요.">
+                <input type="password" class="setting-box-password" placeholder="새 비밀번호를 입력해주세요." id="new-password">
             </div>
             <div class="setting-container">
                 <p class="setting-box-ment">비밀번호 재확인</p>
-                <input type="text" class="setting-box-password" placeholder="새 비밀번호를 확인해주세요.">
+                <div class="setting-box-password-container">
+                    <input type="password" class="setting-box-password" placeholder="새 비밀번호를 확인해주세요." id="confirm-password">
+                    <p class="correct-message">비밀번호가 일치합니다.</p>
+                    <p class="error-message">비밀번호가 일치하지 않습니다. 다시 입력해주세요.</p>
+                </div>
             </div>
-            <button id="accout-delete-btn">계정 삭제</button>
+            <button id="accout-delete-btn" type="button">비밀번호 변경</button>
+            <div id="password-alert">
+                <div class="password-alert-header">
+                    ProReflect
+                </div>
+                <div class="password-alert-content">
+                    <p>비밀번호 변경이 완료되었습니다.</p>
+                    <button id="password-alert-btn">
+                        닫기
+                    </button>                    
+                </div>
+            </div>
         </form>
     </main>
     <script src="../js/mypage_setting.js"></script>
