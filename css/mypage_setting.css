@@ -3,6 +3,7 @@
     width: 792px;
     height: 430px;
     padding: 60px;
+    margin: 1rem auto;
 }
 .setting-container {
     display: flex;
@@ -129,4 +130,9 @@
     position: absolute;
     bottom: 12px;
     right: 20px;
+}
+.back-icon-btn {
+    position: absolute;
+    left: 65px;
+    top: 120px;
 }
