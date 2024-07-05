@@ -41,6 +41,7 @@ urlpatterns = [
     path("mypage_share/", v.mypage_share, name="mypage_share"),
     path("search/", v.search_view, name="search"),
     path("mypage/", v.mypage_setting, name="mypage_setting"),
+    path("signup/", v.signup, name="signup"),
     path("detail/<int:post_id>/", v.board_detail, name="board_detail"),
     path("detail/<int:post_id>/update/", v.update, name="update"),
     path("detail/<int:post_id>/delete/", v.delete, name="delete"),

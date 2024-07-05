@@ -18,6 +18,10 @@ from .models import Comment, Reflection
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from .forms import Comment
+from django.contrib.auth import authenticate, login
+from .forms import LoginForm
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
 
 
 def main(request):
@@ -75,6 +79,30 @@ class AccountCreateView(CreateView):
 
 def grow_1(request):
     return render(request, "grow_1.html")
+
+
+def signup(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        user_id = request.POST["id"]
+        password = request.POST["password"]
+        email = request.POST["email"]
+
+        if User.objects.filter(username=user_id).exists():
+            messages.error(request, "Username already exists")
+            return redirect("signup")
+
+        user = User.objects.create_user(
+            username=user_id, password=password, email=email
+        )
+        user.save()
+
+        user = authenticate(username=user_id, password=password)
+        login(request, user)
+
+        return redirect("login")
+
+    return render(request, "signup.html")
 
 
 @login_required
@@ -361,28 +389,17 @@ def view_reflection(request, reflection_id):
     return render(request, "view_reflection.html", {"reflection": reflection})
 
 
-# views.py
-
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from .forms import LoginForm
-
-
 def login_view(request):
     if request.method == "POST":
-        form = LoginForm(request, request.POST)
-        if form.is_valid():
-            username = form.cleaned_data["username"]
-            password = form.cleaned_data["password"]
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                # 로그인 성공 시 리다이렉트할 URL 설정
-                return redirect("main")  # main 페이지로 리다이렉트
-    else:
-        form = LoginForm()
-
-    return render(request, "login.html", {"form": form})
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("main")
+        else:
+            messages.error(request, "회원정보가 없습니다!")
+    return render(request, "login.html", {"form": AuthenticationForm()})
 
 
 @login_required
