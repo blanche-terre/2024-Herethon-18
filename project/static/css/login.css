@@ -55,14 +55,18 @@
   line-height: 25px;
 }
 
-.signup button{
+.signup a {
     color: #048271;
     border: 2px solid #048271;
     border-radius: 5px;
     width: 280px;
     height: 58px;
     font-size: 24px;
-    line-height: 25px;
+    font-weight: bold;
+    line-height: 58px;
+    display: inline-block;
+    text-align: center; 
+    text-decoration: none;
 }
 
 .login button {
@@ -70,6 +74,9 @@
     background-color: #048271;
     border: 2px solid #048271;
     border-radius: 5px;
+    width: 280px;
+    height: 58px;
+    font-size: 24px;
 }
 
 .forgot {
