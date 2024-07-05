@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/mypage_share.css' %}">
     <title>ProReflect</title>
     <style>
-        /* Reset과 기본 스타일을 재정의합니다. */
-                .logo-text {
+        .logo-text {
             margin: 3em 0 1em 0;
             text-align: center;
             font-weight: bold;
@@ -108,7 +105,6 @@
             border-radius: 5px;
         }
 
-
         .friend {
             display: flex;
             justify-content: space-between;
@@ -124,12 +120,18 @@
             color: #fff;
             cursor: pointer;
         }
+
         .back-icon-btn {
             position: absolute;
             left: 65px;
             top: 120px;
         }
 
+        .message-container {
+            margin-top: 10px;
+            color: #048271;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -163,43 +165,72 @@
                 </ul>
             </div>
             <div class="section">
-                <label class="label">친구아이디/이메일 추가</label>
-                <input type="text" class="input-box">
-                <button type="button" class="add-button">추가하기</button>
+                <label class="label">친구 이메일 추가</label>
+                <input type="text" class="input-box" id="email-input">
             </div>
             <div class="section">
-                <label class="label">초대된 친구</label>
-                <span class="invited-friends" onclick="toggleInvitedList()">나영, 정현 외 3명 ></span>
-                <div class="invited-list" id="invited-list">
-                    <p><span class="highlight">< 5명의 친구와 회고를 나누고 있어요</span></p>
-                    <hr>
-                    <div class="friend">
-                        <span>나영</span>
-                        <button type="button" class="remove-button">공유 그만하기</button>
-                    </div>
-                    <div class="friend">
-                        <span>정현</span>
-                        <button type="button" class="remove-button">공유 그만하기</button>
-                    </div>
-                    <div class="friend">
-                        <span>친구1</span>
-                        <button type="button" class="remove-button">공유 그만하기</button>
-                    </div>
-                    <div class="friend">
-                        <span>친구2</span>
-                        <button type="button" class="remove-button">공유 그만하기</button>
-                    </div>
-                    <div class="friend">
-                        <span>친구3</span>
-                        <button type="button" class="remove-button">공유 그만하기</button>
-                    </div>
-                </div>
+                <button type="button" onclick="addFriend()" class="add-button">친구 추가</button>
+                <div id="message-container" class="message-container"></div>
             </div>
         </form>
-    
-    
         {% load static %}
         <script src="{% static 'js/mypage_share.js' %}"></script>
     </main>
+    <script>
+        function checkEmail() {
+            const email = document.getElementById('email-input').value;
+            fetch(`/check-email`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayMessage(data.message, data.status === 'success');
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function addFriend() {
+            const email = document.getElementById('email-input').value;
+            fetch(`/add-friend`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayMessage(data.message, data.status === 'success');
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function displayMessage(message, isSuccess) {
+            const messageContainer = document.getElementById('message-container');
+            messageContainer.textContent = message;
+            messageContainer.style.color = isSuccess ? 'green' : 'red';
+        }
+
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
 </body>
 </html>

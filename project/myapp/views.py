@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from myapp.forms import CommentForm
-from .models import BoardPost
+from .models import BoardPost, Friendship
 from django.views.decorators.http import require_POST
 import json
 from django.utils import timezone
@@ -437,15 +437,28 @@ logger = logging.getLogger(__name__)
 
 @login_required
 @require_POST
+def check_email(request):
+    data = json.loads(request.body)
+    email = data.get("email")
+    users = User.objects.filter(email=email)
+    if users.exists():
+        return JsonResponse(
+            {"status": "success", "message": "이메일이 확인되었습니다."}
+        )
+    else:
+        return JsonResponse({"status": "fail", "message": "해당 사용자가 없습니다!"})
+
+
+@login_required
+@require_POST
 def add_friend(request):
     data = json.loads(request.body)
     email = data.get("email")
-    logger.debug(f"Processing add_friend for email: {email}")
-
-    try:
-        friend = User.objects.get(email=email)
-        if friend != request.user:
-            Friendship.objects.create(creator=request.user, friend=friend)
+    users = User.objects.filter(email=email)
+    if users.exists():
+        friend = users.first()  # Take the first user if multiple exist
+        if friend != request.user:  # Prevent adding self as friend
+            Friendship.objects.get_or_create(creator=request.user, friend=friend)
             return JsonResponse(
                 {"status": "success", "message": "친구로 추가되었습니다!"}
             )
@@ -453,6 +466,5 @@ def add_friend(request):
             return JsonResponse(
                 {"status": "fail", "message": "자기 자신을 친구로 추가할 수 없습니다."}
             )
-    except User.DoesNotExist:
-        logger.error(f"User not found for email: {email}")
+    else:
         return JsonResponse({"status": "fail", "message": "해당 사용자가 없습니다!"})

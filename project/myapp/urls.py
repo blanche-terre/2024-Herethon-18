@@ -32,4 +32,6 @@ urlpatterns = [
         v.comment_delete,
         name="comment_delete",
     ),
+    path("check-email", v.check_email, name="check-email"),
+    path("add-friend", v.add_friend, name="add-friend"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
