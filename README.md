@@ -28,10 +28,9 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
 |**김나영**|**김세은**|**남지연**|**백지원**|**윤나경**|**한정현**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |백엔드|백엔드|프론트엔드|기획&디자인|프론트엔드|프론트엔드|
-| 작성 필요 | 작성 필요 | 성장 관찰 페이지 구현 | 와이어프레임 작성 | 공유용 게시판 페이지 구현 | 메인 화면 페이지 구현 |
-| 작성 필요 | 작성 필요 | 회고하러 가기 페이지 구현 | UI 디자인 | reflect 작성 페이지 구현 | 회원가입, 로그인 페이지 구현 |
-| 작성 필요 | 작성 필요 | 작성 필요 | 발표 PPT 제작 | 작성 필요 | ProReflect 게시 페이지 구현 |
-| 작성 필요 | 작성 필요 | 작성 필요 | - | 작성 필요 | 작성 필요 |
+| 성장 관찰 페이지 기능 구현 | 공유용 게시판 기능 구현 | 성장 관찰 페이지 구현 | 와이어프레임 작성 | 공유용 게시판 페이지 구현 | 마이페이지 구현 |
+| 마이페이지 기능 구현 | reflect 작성, 게시 기능 구현 | 회고하러 가기 페이지 구현 | UI 디자인 | reflect 작성 페이지 구현 | 회원가입, 로그인 페이지 구현 |
+| 회고하러 가기, 회고 게시 기능 구현 |  | 팝업창 기능 구현  |   | 발표 PPT 제작 |  | ProReflect 게시 페이지 구현 |
 
 ---
 
@@ -39,6 +38,106 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
 ## 폴더 구조
 
 [작성 필요]
+
+📂 2024-Herethon-18 <br/>
+└─ project <br/>
+ ├─ myapp <br/>
+ <ul>
+ │  ├─ __pycache__ <br/>
+ │  ├─ migrations <br/>
+ │  ├─ templates <br/>
+ </ul>
+    <ul>   ├─ after_login.html <br/>
+       ├─ board_create.html <br/>
+       ├─ board_detail.html <br/>
+       ├─ board_list.html <br/>
+       ├─ board_update.html <br/>
+       ├─ grow_1.html <br/>
+       ├─ grow_2.html <br/>
+       ├─ grow_3.html <br/>
+       ├─ home_search.html <br/>
+       ├─ login_create.html <br/>
+       ├─ login.html <br/>
+       ├─ main.html <br/>
+       ├─ mypage_setting.html <br/>
+       ├─ mypage_share.html <br/>
+       ├─ new_login_home.html <br/>
+       ├─ retrospective.html <br/>
+       └─ signup.html <br/>   </ul> 
+ │  ├─ templatetags <br/> 
+ <ul>
+       ├─ __pycache__ <br/>
+       └─ myapp_filters.py <br/> </ul>
+    ├─ __init__.py <br/>
+    ├─ admin.py <br/>
+    ├─ apps.py <br/>
+    ├─ forms.py <br/>
+    ├─ models.py <br/>
+    ├─ tests.py <br/>
+    ├─ urls.py <br/>
+    ├─ userSave.py <br/>
+ │  └─ views.py <br/>
+ ├─ myenv <br/>
+  <ul> ├─ Include <br/>
+    ├─ Lib\site-packages <br/>
+    ├─ Scripts <br/>
+    └─ pyvenv.cfg <br/> </ul>
+ ├─ project <br/>
+ 
+ <ul>  ├─ __pycache__ <br/>
+    ├─ __init__.py <br/>
+    ├─ asgi.py <br/>
+    ├─ settings.py <br/>
+    ├─ urls.py <br/>
+    └─ wsgi.py <br/> </ul>
+ ├─ static <br/> 
+<ul>    ├─ css <br/>
+       ├─ after_login.css <br/>
+       ├─ board_create.css <br/>
+       ├─ board_detail.css <br/>
+       ├─ board_list.css <br/>
+       ├─ grow_1.css <br/>
+       ├─ grow_2.css <br/>
+       ├─ home_search.css <br/>
+       ├─ home.css <br/>
+       ├─ login.css <br/>
+       ├─ mypage_setting.css <br/>
+       ├─ mypage_share.css <br/>
+       ├─ reset.css <br/>
+       ├─ signup.css <br/>
+       └─ style.css <br/> </ul>
+    ├─ img <br/>
+     <ul>  ├─ back-button.svg <br/>
+       ├─ board-search.svg <br/>
+       ├─ default_project_image.png <br/>
+       ├─ heart-clicked.svg <br/>
+       ├─ heart.svg <br/>
+       ├─ inverted-triangle.svg <br/>
+       ├─ kakao_login.png <br/>
+       ├─ naver_login.png <br/>
+       ├─ paperclip.svg <br/>
+       ├─ person.png <br/>
+       ├─ QuestionMark.svg <br/>
+       ├─ water-drop-clicked.svg <br/>
+       └─ water-drop.svg <br/> </ul>
+    └─ js <br/>
+    <ul>
+       ├─ board_create.js <br/>
+       ├─ board_list.js <br/>
+       ├─ home_search.js <br/>
+       ├─ home.js <br/>
+       ├─ mypage_setting.js <br/>
+       └─ mypage_share.js <br/> </ul>
+ ├─ uploads <br/>
+ <ul>
+    ├─ default-profile.jpg <br/>
+    └─ IMG_1585.jpeg <br/> </ul>
+ ├─ db_backup.json <br/>        
+ ├─ db.sqlite3 <br/>
+ ├─ manage.py <br/>
+ ├─ .gitignore <br/>
+ ├─ db_backup.json <br/>
+ └─ README.md <br/>
 ---
 
 
