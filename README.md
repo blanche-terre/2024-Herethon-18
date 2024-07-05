@@ -42,12 +42,12 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
 📂 2024-Herethon-18 <br/>
 └─ project <br/>
  ├─ myapp <br/>
- <ul></ul>
+ <ul>
  │  ├─ __pycache__ <br/>
  │  ├─ migrations <br/>
  │  ├─ templates <br/>
  </ul>
-           ├─ after_login.html <br/>
+    <ul>   ├─ after_login.html <br/>
        ├─ board_create.html <br/>
        ├─ board_detail.html <br/>
        ├─ board_list.html <br/>
@@ -63,7 +63,7 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
        ├─ mypage_share.html <br/>
        ├─ new_login_home.html <br/>
        ├─ retrospective.html <br/>
-       └─ signup.html <br/>
+       └─ signup.html <br/> </ul>
  │  ├─ templatetags <br/>
        ├─ __pycache__ <br/>
        └─ myapp_filters.py <br/>
