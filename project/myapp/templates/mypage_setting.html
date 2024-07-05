@@ -16,7 +16,11 @@
 </head>
 <body>
     <header id="header">
-        <a href="{% url 'main' %}" id="header-logo">ProReflect</a>
+        <a href="{% url 'main' %}" id="header-logo">
+            <img src="{% static 'img/white_logo.svg' %}" alt="로고 이미지" 
+            style="
+            height: 100px;
+        "></a>
         <nav id="header-nav">
             <a href="{% url 'board_list' %}">공유용 게시판</a>
             <a href="{% if user.is_authenticated %}{% url 'grow_1' %}{% else %}{% url 'login' %}{% endif %}">성장관찰</a>
@@ -28,7 +32,7 @@
     </header>
     <main>
         <div class="logo-text">
-            <h1>ProReflect</h1>
+            <img src="{% static 'img/IMG_0726.png' %}" width="350px">
         </div>
         <form class="form-container">
             <div class="setting-container">

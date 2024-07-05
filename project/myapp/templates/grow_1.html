@@ -56,8 +56,8 @@
         }
 
         .project-image img {
-            max-width: 100px;
-            max-height: 100px;
+            max-width: 500px;
+            max-height: 500px;
             object-fit: cover;
             border-radius: 5px;
             margin-right: 20px;
@@ -70,11 +70,57 @@
         .project-content {
             flex-grow: 1;
         }
+
+        .reflection-container {
+            width: 100%;
+            max-width: 1100px;
+            height: 335px;
+            border-radius: 20px;
+            background-color: #5e857f;
+            margin: 24px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* 스크롤 가능하도록 설정 */
+        }
+
+        .reflection-item {
+            width: 90%;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        /* 제목 스타일 */
+        .reflection-title {
+            font-size: 24px; /* 크기 조절 */
+            font-weight: bold; /* 글씨 두껍게 */
+            margin-bottom: 10px; /* 내용과의 여백 */
+        }
+
+        /* 내용 스타일 */
+        .reflection-content p {
+            font-size: 16px; /* 내용의 글자 크기 */
+            color: #333; /* 글자 색상 */
+            line-height: 1.5; /* 줄간격 */
+        }
+
+        /* 메타데이터 스타일 */
+        .reflection-metadata span {
+            font-size: 14px; /* 메타데이터 글자 크기 */
+            color: #666; /* 메타데이터 글자 색상 */
+        }
     </style>
 </head>
 <body>
     <header id="header">
-        <a href="{% url 'main' %}" id="header-logo">ProReflect</a>
+        <a href="{% url 'main' %}" id="header-logo">
+            <img src="{% static 'img/white_logo.svg' %}" alt="로고 이미지" 
+            style="
+            height: 100px;
+        "></a>
         <nav id="header-nav">
             <a href="{% url 'board_list' %}">공유용 게시판</a>
             <a href="{% if user.is_authenticated %}{% url 'grow_1' %}{% else %}{% url 'login' %}{% endif %}">성장관찰</a>
@@ -102,9 +148,22 @@
             </div>
         </div>
 
-        <div class="graph-container">
-            <canvas id="likesGraph"></canvas>
+
+        <h1 class="text5-container">지금까지의 회고록</h1>
+        <div class="reflection-container">
+            {% for reflection in reflections %}
+            <div class="reflection-item">
+                <h2 class="reflection-title">{{ reflection.post.title }}</h2>
+                <div class="reflection-content">
+                    <p>{{ reflection.content }}</p>
+                    <div class="reflection-metadata">
+                        <span>{{ reflection.created_at|date:"Y.m.d" }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
+
         
         <div>
             <h1 class="text5-container">지금까지의 프로젝트</h1>
@@ -137,10 +196,6 @@
             {% endfor %}
         </div>
     </main>
-
-    <script type="application/json" id="dates">{{ dates|json_script:"dates" }}</script>
-    <script type="application/json" id="like_counts">{{ like_counts|json_script:"like_counts" }}</script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var datesJson = document.getElementById('dates').textContent;
@@ -181,6 +236,9 @@
                 }
             });
         });
-    </script>    
+    </script>   
+    <script type="application/json" id="dates">{{ dates|json_script:"dates" }}</script>
+    <script type="application/json" id="like_counts">{{ like_counts|json_script:"like_counts" }}</script>
+ 
 </body>
 </html>

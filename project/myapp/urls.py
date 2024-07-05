@@ -34,4 +34,5 @@ urlpatterns = [
     ),
     path("check-email", v.check_email, name="check-email"),
     path("add-friend", v.add_friend, name="add-friend"),
+    path("grow-1/", v.grow_1_view, name="grow_1"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

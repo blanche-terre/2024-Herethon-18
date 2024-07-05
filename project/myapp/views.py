@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from myapp.forms import CommentForm
-from .models import BoardPost, Friendship
+from .models import BoardPost, Friendship, Reflection
 from django.views.decorators.http import require_POST
 import json
 from django.utils import timezone
@@ -468,3 +468,24 @@ def add_friend(request):
             )
     else:
         return JsonResponse({"status": "fail", "message": "해당 사용자가 없습니다!"})
+
+
+from django.db.models import Count
+
+
+def grow_1_view(request):
+    user_posts = BoardPost.objects.filter(user=request.user)
+    reflections = Reflection.objects.filter(user=request.user)
+
+    print("Reflections Count:", reflections.count())  # 서버 로그에 반영 개수 출력
+
+    return render(
+        request,
+        "grow_1.html",
+        {
+            "user_posts": user_posts,
+            "reflections": reflections,
+            "total_posts": user_posts.count(),
+            "total_likes": sum(post.likes.count() for post in user_posts),
+        },
+    )
