@@ -47,7 +47,7 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
  │  ├─ migrations <br/>
  │  ├─ templates <br/>
  </ul>
-    <ul> '''  ├─ after_login.html <br/>
+    <ul>   ├─ after_login.html <br/>
        ├─ board_create.html <br/>
        ├─ board_detail.html <br/>
        ├─ board_list.html <br/>
@@ -63,10 +63,11 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
        ├─ mypage_share.html <br/>
        ├─ new_login_home.html <br/>
        ├─ retrospective.html <br/>
-       └─ signup.html <br/>  ''' </ul> 
- │  ├─ templatetags <br/>
+       └─ signup.html <br/>   </ul> 
+ │  ├─ templatetags <br/> 
+ <ul>
        ├─ __pycache__ <br/>
-       └─ myapp_filters.py <br/>
+       └─ myapp_filters.py <br/> </ul>
     ├─ __init__.py <br/>
     ├─ admin.py <br/>
     ├─ apps.py <br/>
@@ -77,19 +78,20 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
     ├─ userSave.py <br/>
  │  └─ views.py <br/>
  ├─ myenv <br/>
-    ├─ Include <br/>
+  <ul> ├─ Include <br/>
     ├─ Lib\site-packages <br/>
     ├─ Scripts <br/>
-    └─ pyvenv.cfg <br/>
+    └─ pyvenv.cfg <br/> </ul>
  ├─ project <br/>
-    ├─ __pycache__ <br/>
+ 
+ <ul>  ├─ __pycache__ <br/>
     ├─ __init__.py <br/>
     ├─ asgi.py <br/>
     ├─ settings.py <br/>
     ├─ urls.py <br/>
-    └─ wsgi.py <br/>
+    └─ wsgi.py <br/> </ul>
  ├─ static <br/> 
-    ├─ css <br/>
+<ul>    ├─ css <br/>
        ├─ after_login.css <br/>
        ├─ board_create.css <br/>
        ├─ board_detail.css <br/>
@@ -103,9 +105,9 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
        ├─ mypage_share.css <br/>
        ├─ reset.css <br/>
        ├─ signup.css <br/>
-       └─ style.css <br/>
+       └─ style.css <br/> </ul>
     ├─ img <br/>
-       ├─ back-button.svg <br/>
+     <ul>  ├─ back-button.svg <br/>
        ├─ board-search.svg <br/>
        ├─ default_project_image.png <br/>
        ├─ heart-clicked.svg <br/>
@@ -117,17 +119,19 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
        ├─ person.png <br/>
        ├─ QuestionMark.svg <br/>
        ├─ water-drop-clicked.svg <br/>
-       └─ water-drop.svg <br/>
+       └─ water-drop.svg <br/> </ul>
     └─ js <br/>
+    <ul>
        ├─ board_create.js <br/>
        ├─ board_list.js <br/>
        ├─ home_search.js <br/>
        ├─ home.js <br/>
        ├─ mypage_setting.js <br/>
-       └─ mypage_share.js <br/>
+       └─ mypage_share.js <br/> </ul>
  ├─ uploads <br/>
+ <ul>
     ├─ default-profile.jpg <br/>
-    └─ IMG_1585.jpeg <br/>
+    └─ IMG_1585.jpeg <br/> </ul>
  ├─ db_backup.json <br/>        
  ├─ db.sqlite3 <br/>
  ├─ manage.py <br/>
