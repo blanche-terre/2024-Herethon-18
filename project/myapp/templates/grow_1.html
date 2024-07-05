@@ -5,12 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/grow_1.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>ProReflect</title>
+    <style>
+        .graph-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            height: 335px;
+            border-radius: 20px;
+            background-color: #048271;
+            margin: 24px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        canvas#likesGraph {
+            width: 100% !important;
+            height: 100% !important;
+            max-height: 335px;
+        }
+
+        .project-container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        .project-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            background-color: #eb5d5d; /* 기본 색상은 빨간색 */
+        }
+
+        .project-status.completed {
+            background-color: #37ad9d; /* 회고 완료는 초록색 */
+        }
+
+        .project-image img {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .project-details {
+            display: flex;
+        }
+
+        .project-content {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -24,27 +84,6 @@
             {% endif %}
         </nav>
     </header>
-        <style>
-            .graph-container {
-    display: flex;
-    justify-content: center;  /* 수평 중앙 정렬 */
-    align-items: center;      /* 수직 중앙 정렬 */
-    width: 100%;              /* 부모 요소의 전체 너비 */
-    max-width: 800px;         /* 최대 너비 설정 */
-    height: 335px;            /* 높이 설정 */
-    border-radius: 20px;
-    background-color: #048271;
-    margin: 24px auto;        /* 상단 마진 및 수평 중앙 정렬 */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-canvas#likesGraph {
-    width: 100% !important;
-    height: 100% !important;
-    max-height: 335px; /* graph-container의 세로 길이와 일치시킴 */
-}
-</style>
 
     <main>
         <div class="Big-container">
@@ -67,10 +106,13 @@ canvas#likesGraph {
             <canvas id="likesGraph"></canvas>
         </div>
         
-        <div class="project-container">
+        <div>
             <h1 class="text5-container">지금까지의 프로젝트</h1>
             {% for post in user_posts %}
             <div class="project-container">
+                <span class="project-status {% if post.reflection_num %}completed{% endif %}">
+                    {% if post.reflection_num %}회고 완료{% else %}회고 미완료{% endif %}
+                </span>
                 <div class="project-details">
                     <div class="project-image">
                         {% if post.file %}
@@ -100,58 +142,44 @@ canvas#likesGraph {
     <script type="application/json" id="like_counts">{{ like_counts|json_script:"like_counts" }}</script>
 
     <script>
-        console.log('dates:', document.getElementById('dates').textContent);
-        console.log('like_counts:', document.getElementById('like_counts').textContent);
-
         document.addEventListener('DOMContentLoaded', function () {
             var datesJson = document.getElementById('dates').textContent;
             var likeCountsJson = document.getElementById('like_counts').textContent;
 
-            console.log('datesJson:', datesJson);
-            console.log('likeCountsJson:', likeCountsJson);
+            var dates = JSON.parse(datesJson.slice(datesJson.indexOf('['), datesJson.lastIndexOf(']') + 1));
+            var likeCounts = JSON.parse(likeCountsJson.slice(likeCountsJson.indexOf('['), likeCountsJson.lastIndexOf(']') + 1));
 
-            try {
-                // JSON 데이터 추출
-                var dates = JSON.parse(datesJson.slice(datesJson.indexOf('['), datesJson.lastIndexOf(']') + 1));
-                var likeCounts = JSON.parse(likeCountsJson.slice(likeCountsJson.indexOf('['), likeCountsJson.lastIndexOf(']') + 1));
-
-                console.log('dates:', dates);
-                console.log('likeCounts:', likeCounts);
-
-                var ctx = document.getElementById('likesGraph').getContext('2d');
-                var likesGraph = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: dates,
-                        datasets: [{
-                            label: '일별 좋아요 수',
-                            data: likeCounts,
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 3,  // 선의 두께를 3으로 설정
-                            pointRadius: 5, // 데이터 포인트의 반경을 5로 설정
-                            pointBackgroundColor: 'rgba(255, 99, 132, 1)', // 데이터 포인트의 배경 색상
-                            pointBorderColor: '#fff' // 데이터 포인트의 테두리 색상
-                        }]
+            var ctx = document.getElementById('likesGraph').getContext('2d');
+            var likesGraph = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: '일별 좋아요 수',
+                        data: likeCounts,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 3,
+                        pointRadius: 5,
+                        pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                        pointBorderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     },
-                    options: {
-                        responsive: true, // 반응형 설정
-                        maintainAspectRatio: false, // 캔버스 비율 유지하지 않음
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        },
-                        elements: {
-                            line: {
-                                tension: 0.3 // 선의 곡선 정도 (0은 직선)
-                            }
+                    elements: {
+                        line: {
+                            tension: 0.3
                         }
                     }
-                });
-            } catch (e) {
-                console.error('JSON parse error:', e);
-            }
+                }
+            });
         });
     </script>    
 </body>

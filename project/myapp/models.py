@@ -67,6 +67,7 @@ class BoardPost(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name="liked_posts", blank=True)
     dislikes = models.ManyToManyField(User, related_name="disliked_posts", blank=True)
+    reflection_num = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
@@ -93,6 +94,12 @@ class Reflection(models.Model):
     post = models.ForeignKey(BoardPost, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        # 회고록이 작성되었으므로 해당 게시물의 reflection 필드를 True로 설정
+        self.post.reflection_num = True
+        self.post.save()
 
     def __str__(self):
         return self.content[:50]
