@@ -15,7 +15,10 @@
         <nav id="header-nav">
             <a href="{% url 'board_list' %}">공유용 게시판</a>
             <a href="{% if user.is_authenticated %}{% url 'grow_1' %}{% else %}{% url 'login' %}{% endif %}">성장관찰</a>
-            <a href="{% if user.is_authenticated %}{% url 'mypage_setting' %}{% else %}{% url 'login' %}{% endif %}">마이페이지</a>
+            <a href="{% if user.is_authenticated %}{% url 'after_login' %}{% else %}{% url 'login' %}{% endif %}">마이페이지</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">로그아웃</a>
+            {% endif %}
         </nav>
     </header>
     <main>
@@ -44,7 +47,7 @@
             </div>
             <div class="submit">
                 <div class="signup">
-                    <a href="{% url 'signup' %}" class="signup-button">회원가입</a>
+                    <a href="{% url 'signup' %}" class="signup-button" type="submit">회원가입</a>
                 </div>
                 <div class="login">
                     <button type="submit" id="submitButton">로그인</button>

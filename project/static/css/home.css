@@ -99,9 +99,14 @@ input[type="text"]:focus {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0.5em;
+    max-height: 40px; /* 수정함 */
+    overflow: hidden; /* 수정함 */
+    width: 178.4px; /* 수정함 */
 }
 
 .project-content {
     font-size: 14px;
     color: #666;
+    max-height: 144px; /* 수정함 */
+    overflow: hidden; /* 수정함 */
 }
