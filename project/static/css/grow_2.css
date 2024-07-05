@@ -280,6 +280,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 133.8%; /* 48.168px */
+    margin-top: -21px;
   }
   
   .proreflect {
@@ -298,7 +299,8 @@
     font-style: normal;
     font-weight: 600;
     line-height: 133.8%; /* 18.732px */
-    margin-top: 70px;
+    margin-top: 10px;
+    margin-left: 410px;
     cursor: pointer;
   }
   

@@ -335,8 +335,9 @@ def logout_view(request):
     return redirect("main")  # 로그아웃 후 리디렉션 될 페이지
 
 
+@login_required
 def after_login(request):
-    return render(request, "after_login.html")
+    return render(request, "after_login.html", {"username": request.user.username})
 
 
 @login_required
