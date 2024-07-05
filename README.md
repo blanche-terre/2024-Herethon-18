@@ -39,105 +39,99 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
 
 [작성 필요]
 
-📂 2024-Herethon-18
-
-
-└─ project
-
-
- ├─ myapp
- 
- 
+📂 2024-Herethon-18 <br/>
+└─ project <br/>
+ ├─ myapp <br/>
  │  ├─ __pycache__ <br/>
- │  ├─ migrations
- │  ├─ templates
-       ├─ after_login.html
-       ├─ board_create.html
-       ├─ board_detail.html
-       ├─ board_list.html
-       ├─ board_update.html
-       ├─ grow_1.html
-       ├─ grow_2.html
-       ├─ grow_3.html
-       ├─ home_search.html
-       ├─ login_create.html
-       ├─ login.html
-       ├─ main.html
-       ├─ mypage_setting.html
-       ├─ mypage_share.html
-       ├─ new_login_home.html
-       ├─ retrospective.html
-       └─ signup.html
- │  ├─ templatetags
-       ├─ __pycache__
-       └─ myapp_filters.py
-    ├─ __init__.py
-    ├─ admin.py
-    ├─ apps.py
-    ├─ forms.py
-    ├─ models.py
-    ├─ tests.py
-    ├─ urls.py
-    ├─ userSave.py
- │  └─ views.py
- ├─ myenv
-    ├─ Include
-    ├─ Lib\site-packages
-    ├─ Scripts
-    └─ pyvenv.cfg
- ├─ project
-    ├─ __pycache__
-    ├─ __init__.py
-    ├─ asgi.py
-    ├─ settings.py
-    ├─ urls.py
-    └─ wsgi.py
- ├─ static
-    ├─ css
-       ├─ after_login.css
-       ├─ board_create.css
-       ├─ board_detail.css
-       ├─ board_list.css
-       ├─ grow_1.css
-       ├─ grow_2.css
-       ├─ home_search.css
-       ├─ home.css
-       ├─ login.css
-       ├─ mypage_setting.css
-       ├─ mypage_share.css
-       ├─ reset.css
-       ├─ signup.css
-       └─ style.css
-    ├─ img
-       ├─ back-button.svg
-       ├─ board-search.svg
-       ├─ default_project_image.png
-       ├─ heart-clicked.svg
-       ├─ heart.svg
-       ├─ inverted-triangle.svg
-       ├─ kakao_login.png
-       ├─ naver_login.png
-       ├─ paperclip.svg
-       ├─ person.png
-       ├─ QuestionMark.svg
-       ├─ water-drop-clicked.svg
-       └─ water-drop.svg
-    └─ js
-       ├─ board_create.js
-       ├─ board_list.js
-       ├─ home_search.js
-       ├─ home.js
-       ├─ mypage_setting.js
-       └─ mypage_share.js
- ├─ uploads
-    ├─ default-profile.jpg
-    └─ IMG_1585.jpeg
- ├─ db_backup.json       
- ├─ db.sqlite3
- ├─ manage.py
- ├─ .gitignore
- ├─ db_backup.json
- └─ README.md
+ │  ├─ migrations <br/>
+ │  ├─ templates <br/>
+       ├─ after_login.html <br/>
+       ├─ board_create.html <br/>
+       ├─ board_detail.html <br/>
+       ├─ board_list.html <br/>
+       ├─ board_update.html <br/>
+       ├─ grow_1.html <br/>
+       ├─ grow_2.html <br/>
+       ├─ grow_3.html <br/>
+       ├─ home_search.html <br/>
+       ├─ login_create.html <br/>
+       ├─ login.html <br/>
+       ├─ main.html <br/>
+       ├─ mypage_setting.html <br/>
+       ├─ mypage_share.html <br/>
+       ├─ new_login_home.html <br/>
+       ├─ retrospective.html <br/>
+       └─ signup.html <br/>
+ │  ├─ templatetags <br/>
+       ├─ __pycache__ <br/>
+       └─ myapp_filters.py <br/>
+    ├─ __init__.py <br/>
+    ├─ admin.py <br/>
+    ├─ apps.py <br/>
+    ├─ forms.py <br/>
+    ├─ models.py <br/>
+    ├─ tests.py <br/>
+    ├─ urls.py <br/>
+    ├─ userSave.py <br/>
+ │  └─ views.py <br/>
+ ├─ myenv <br/>
+    ├─ Include <br/>
+    ├─ Lib\site-packages <br/>
+    ├─ Scripts <br/>
+    └─ pyvenv.cfg <br/>
+ ├─ project <br/>
+    ├─ __pycache__ <br/>
+    ├─ __init__.py <br/>
+    ├─ asgi.py <br/>
+    ├─ settings.py <br/>
+    ├─ urls.py <br/>
+    └─ wsgi.py <br/>
+ ├─ static <br/> 
+    ├─ css <br/>
+       ├─ after_login.css <br/>
+       ├─ board_create.css <br/>
+       ├─ board_detail.css <br/>
+       ├─ board_list.css <br/>
+       ├─ grow_1.css <br/>
+       ├─ grow_2.css <br/>
+       ├─ home_search.css <br/>
+       ├─ home.css <br/>
+       ├─ login.css <br/>
+       ├─ mypage_setting.css <br/>
+       ├─ mypage_share.css <br/>
+       ├─ reset.css <br/>
+       ├─ signup.css <br/>
+       └─ style.css <br/>
+    ├─ img <br/>
+       ├─ back-button.svg <br/>
+       ├─ board-search.svg <br/>
+       ├─ default_project_image.png <br/>
+       ├─ heart-clicked.svg <br/>
+       ├─ heart.svg <br/>
+       ├─ inverted-triangle.svg <br/>
+       ├─ kakao_login.png <br/>
+       ├─ naver_login.png <br/>
+       ├─ paperclip.svg <br/>
+       ├─ person.png <br/>
+       ├─ QuestionMark.svg <br/>
+       ├─ water-drop-clicked.svg <br/>
+       └─ water-drop.svg <br/>
+    └─ js <br/>
+       ├─ board_create.js <br/>
+       ├─ board_list.js <br/>
+       ├─ home_search.js <br/>
+       ├─ home.js <br/>
+       ├─ mypage_setting.js <br/>
+       └─ mypage_share.js <br/>
+ ├─ uploads <br/>
+    ├─ default-profile.jpg <br/>
+    └─ IMG_1585.jpeg <br/>
+ ├─ db_backup.json <br/>        
+ ├─ db.sqlite3 <br/>
+ ├─ manage.py <br/>
+ ├─ .gitignore <br/>
+ ├─ db_backup.json <br/>
+ └─ README.md <br/>
 ---
 
 
