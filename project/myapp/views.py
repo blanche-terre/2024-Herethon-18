@@ -22,6 +22,7 @@ from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+import logging
 
 
 def main(request):
@@ -429,3 +430,29 @@ def delete_reflection(request, reflection_id):
             "some_view_name"
         )  # Redirect to a confirmation page or the main page
     return render(request, "confirm_delete.html", {"reflection": reflection})
+
+
+logger = logging.getLogger(__name__)
+
+
+@login_required
+@require_POST
+def add_friend(request):
+    data = json.loads(request.body)
+    email = data.get("email")
+    logger.debug(f"Processing add_friend for email: {email}")
+
+    try:
+        friend = User.objects.get(email=email)
+        if friend != request.user:
+            Friendship.objects.create(creator=request.user, friend=friend)
+            return JsonResponse(
+                {"status": "success", "message": "친구로 추가되었습니다!"}
+            )
+        else:
+            return JsonResponse(
+                {"status": "fail", "message": "자기 자신을 친구로 추가할 수 없습니다."}
+            )
+    except User.DoesNotExist:
+        logger.error(f"User not found for email: {email}")
+        return JsonResponse({"status": "fail", "message": "해당 사용자가 없습니다!"})

@@ -334,3 +334,18 @@
     line-height: 150%; /* 27px */
     padding: 10px;
   }
+
+
+  
+
+  .people-container,
+  .period-container {
+    border-radius: 10px;
+  }
+  #board-detail2 {
+    margin-top: 10px;
+  }
+
+  .proTitle-container {
+    margin-bottom: 10px;
+  }
