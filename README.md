@@ -143,7 +143,7 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
 
 ## 개발 환경에서의 실행 방법
 
-django-admin startproject 프로젝트명
+django-admin startproject 프로젝트명 <br/>
 python manage.py runserver
 ---
 
