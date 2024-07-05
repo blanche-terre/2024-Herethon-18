@@ -47,7 +47,7 @@ SW정책연구소(SPRi)가 발간한 '2022년 SW산업 실태조사' 보고서�
  │  ├─ migrations <br/>
  │  ├─ templates <br/>
  </ul>
-    <ul>   ├─ after_login.html <br/>
+    <ul> '''  ├─ after_login.html <br/>
        ├─ board_create.html <br/>
        ├─ board_detail.html <br/>
        ├─ board_list.html <br/>
